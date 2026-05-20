@@ -1,4 +1,4 @@
-import { add, subtract, multiply, divide } from "../calculator";
+import { add, subtract, multiply, divide, modulo } from "../calculator";
 
 describe("Calculator", () => {
   test("addiert zwei Zahlen", () => {
@@ -20,4 +20,11 @@ describe("Calculator", () => {
   test("wirft Fehler bei Division durch 0", () => {
     expect(() => divide(5, 0)).toThrow("Division durch 0 nicht erlaubt");
   });
+  test("berechnet den Rest einer Division", () => {
+      expect(modulo(10, 3)).toBe(1);
+    });
+
+    test("wirft Fehler bei Modulo mit 0", () => {
+      expect(() => modulo(5, 0)).toThrow("Division durch 0 nicht erlaubt");
+    });
 });
